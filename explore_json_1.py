@@ -8,3 +8,20 @@ outfile = open("readable_eq_data.json", "w")
 eq_data = json.load(infile)
 
 json.dump(eq_data, outfile, indent=4)
+
+# Explore the structure of the data.
+
+all_eq_dicts = eq_data["features"]
+
+mags, lons, lats = [], [], []
+for eq_dict in all_eq_dicts:
+    mag = eq_dict["properties"]["mag"]
+    lon = eq_dict["geometry"]["coordinates"][0]
+    lat = eq_dict["geometry"]["coordinates"][1]
+    mags.append(mag)
+    lons.append(lon)
+    lats.append(lat)
+
+print(mags[:10])
+print(lons[:5])
+print(lats[:5])
