@@ -8,6 +8,7 @@ outfile = open("readable_eq_data.json", "w")
 
 # The json.loaod() function converts the data into a format Python
 # can work with, in this case a giant dictionary.
+
 eq_data = json.load(infile)
 
 json.dump(eq_data, outfile, indent=4)
@@ -32,16 +33,7 @@ print(lats[:5])
 
 # Now bring in chart with plotly
 
-data = [
-    {
-        "type": "scattergeo",
-        "lon": lons,
-        "lat": lats,
-        "marker": {
-            "size": [5 * mag for mag in mags],
-        },
-    }
-]
+data = [Scattergeo(lon=lons, lat=lats)]
 
 my_layout = Layout(title="Global Earthquakes")
 
