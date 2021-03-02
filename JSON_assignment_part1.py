@@ -28,7 +28,7 @@ data = [
             "color": brightnesses,
             "colorscale": "Viridis",
             "reversescale": True,
-            "colorbar": {"title": "brightness"},
+            "colorbar": {"title": "Brightness"},
         },
     }
 ]
